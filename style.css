@@ -60,16 +60,17 @@ button {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: #ffffff;
+    background:#ffffff;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.08);
+    height:99px !important;
 }
 
 .navbar {
-    min-height: 80px;
+    min-height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 25px;
+    gap: 20px;
 }
 
 
@@ -81,21 +82,21 @@ button {
     display: flex;
     flex-direction: column;
     line-height: 1;
-    min-width: 150px;
+    min-width: 140px;
 }
 
 .logo span {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 700;
     color: #087f8c;
     letter-spacing: 0.5px;
 }
 
 .logo small {
-    margin-top: 5px;
-    font-size: 11px;
+    margin-top: 2px;
+    font-size: 10px;
     font-weight: 600;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     color: #455a64;
 }
 
@@ -108,7 +109,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 24px;
+    gap: 55px;
 }
 
 .nav-menu a {
@@ -224,14 +225,14 @@ button {
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 1px;
-    margin-bottom: 20px;
+    margin-bottom: 118px;
 }
 
 .hero h1 {
     font-size: clamp(40px, 6vw, 70px);
     line-height: 1.15;
     font-weight: 700;
-    margin-bottom: 18px;
+    margin-top: -100px;
 }
 
 .hero h1 span {
@@ -941,7 +942,7 @@ button {
 
 .footer-brand p {
     color: #bdd3d6;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .footer-logo img{
