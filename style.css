@@ -14,6 +14,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -21,6 +22,7 @@ body {
     color: #263238;
     background: #ffffff;
     line-height: 1.7;
+    overflow-x: hidden;
 }
 
 a {
@@ -35,10 +37,17 @@ ul {
 img {
     max-width: 100%;
     display: block;
+    height: auto;
 }
 
 button {
     font-family: inherit;
+}
+
+iframe,
+video,
+svg {
+    max-width: 100%;
 }
 
 .container {
@@ -62,7 +71,7 @@ button {
     z-index: 1000;
     background:#ffffff;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.08);
-    height:99px !important;
+    height:100px !important;
 }
 
 .navbar {
@@ -83,6 +92,12 @@ button {
     flex-direction: column;
     line-height: 1;
     min-width: 140px;
+}
+
+.logo img {
+    max-width: 180px;
+    width: 100%;
+    height: auto;
 }
 
 .logo span {
@@ -214,6 +229,7 @@ button {
     color: #ffffff;
     max-width: 800px;
     margin-left: 5%;
+    margin-top: 27px;
 }
 
 .hero-tag {
@@ -1080,6 +1096,10 @@ button {
 
 /* Mobile */
 @media (max-width: 600px) {
+
+    .logo img {
+        max-width: 140px;
+    }
 
     .social-float {
         right: 15px;
