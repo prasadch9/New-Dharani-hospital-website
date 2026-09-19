@@ -66,11 +66,12 @@ svg {
    ========================= */
 
 .header {
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 1000;
     background: #ffffff;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.08);
+      width: 100%;
 }
 
 .navbar {
@@ -123,7 +124,7 @@ svg {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 55px;
+    gap: 43px;
 }
 
 .nav-menu a {
@@ -163,9 +164,9 @@ svg {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: #087f8c;
+   background: #9e3434;
     color: #ffffff;
-    padding: 12px 20px;
+    padding: 7px 20px;
     border-radius: 30px;
     font-size: 14px;
     font-weight: 600;
@@ -174,8 +175,28 @@ svg {
 }
 
 .call-btn:hover {
-    background: #05636d;
+   background: #f90519;
     transform: translateY(-2px);
+}
+@media (max-width: 576px) {
+    .mobile-appointment-btn {
+        width: 115px;
+        height: 34px;
+        padding: 0 6px;
+        font-size: 10px;
+        font-weight: 600;
+        border-radius: 18px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px !important;
+        white-space: nowrap;
+    }
+
+    .mobile-appointment-btn i {
+        font-size: 13px;
+    }
 }
 
 
@@ -230,6 +251,19 @@ svg {
     margin-left: 5%;
     margin-top: 27px;
 }
+@media (max-width: 576px) {
+  .hero-tag {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    border-radius: 20px;
+    margin-top: 40px !important;
+    max-width: 90%;
+    box-sizing: border-box;
+  }
+}
 
 .hero-tag {
     display: inline-block;
@@ -240,7 +274,7 @@ svg {
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 1px;
-    margin-bottom: 24px;
+   margin-top: 80px;
 }
 
 .hero h1 {
@@ -450,10 +484,6 @@ svg {
 }
 
 
-/* =========================
-   11. EMERGENCY
-   ========================= */
-
 .emergency {
     background:
         linear-gradient(
@@ -486,15 +516,100 @@ svg {
     transform: translateY(-7px);
 }
 
+
+/* =========================
+   EMERGENCY ICONS
+   ========================= */
+
 .emergency-card i {
-    font-size: 35px;
-    margin-bottom: 18px;
-    color: #a7f0f4;
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    font-size: 30px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    transition: all 0.3s ease;
 }
 
-.emergency-card:hover i {
-    color: #087f8c;
+
+/* Different icon colors */
+
+.emergency-card:nth-child(1) i {
+    color: #ff4d4d;
 }
+
+.emergency-card:nth-child(2) i {
+    color: #ff5c8a;
+}
+
+.emergency-card:nth-child(3) i {
+    color: #ff9f43;
+}
+
+.emergency-card:nth-child(4) i {
+    color: #ff4757;
+}
+
+.emergency-card:nth-child(5) i {
+    color: #70d6ff;
+}
+
+.emergency-card:nth-child(6) i {
+    color: #ffd32a;
+}
+
+.emergency-card:nth-child(7) i {
+    color: #48dbfb;
+}
+
+.emergency-card:nth-child(8) i {
+    color: #ff6b6b;
+}
+
+.emergency-card:nth-child(9) i {
+    color: #a29bfe;
+}
+
+.emergency-card:nth-child(10) i {
+    color: #ff7f50;
+}
+
+.emergency-card:nth-child(11) i {
+    color: #c56cf0;
+}
+
+.emergency-card:nth-child(12) i {
+    color: #7bed9f;
+}
+
+.emergency-card:nth-child(13) i {
+    color: #ffa502;
+}
+
+.emergency-card:nth-child(14) i {
+    color: #ff9ff3;
+}
+
+.emergency-card:nth-child(15) i {
+    color: #ff6b81;
+}
+
+
+/* Icon hover */
+
+.emergency-card:hover i {
+    background: #ffffff;
+    transform: scale(1.12);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
 
 .emergency-card h3 {
     font-size: 18px;
@@ -509,7 +624,6 @@ svg {
 .emergency-card:hover p {
     color: #68777c;
 }
-
 
 /* =========================
    12. DEPARTMENTS
@@ -1103,6 +1217,7 @@ svg {
     font-size: 12px;
     line-height: 1.6;
     margin: 0;
+
 }
 
 .back-to-top {
@@ -1478,4 +1593,860 @@ svg {
 
 .hero-content {
     animation: fadeUp 1s ease;
+}
+
+/* ================================
+   HERO ANIMATION
+================================ */
+
+.hero-animate > * {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: dhHeroFade 0.8s ease-out forwards;
+}
+
+.hero-animate .hero-tag {
+  animation-delay: 0.2s;
+}
+
+.hero-animate h1 {
+  animation-delay: 0.4s;
+}
+
+.hero-animate .hero-unit {
+  animation-delay: 0.6s;
+}
+
+.hero-animate > p:not(.hero-unit):not(.hero-description) {
+  animation-delay: 0.8s;
+}
+
+.hero-animate .hero-description {
+  animation-delay: 1s;
+}
+
+.hero-animate .hero-buttons {
+  animation-delay: 1.2s;
+}
+
+
+@keyframes dhHeroFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =================================
+   ABOUT REVEAL ANIMATION
+================================= */
+
+.about-reveal .container {
+    opacity: 0;
+    transform: translateX(-80px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.about-reveal.show .container {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* =================================
+   HERO SOFT REVEAL ANIMATION
+================================= */
+
+.hero-simple-animation {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(20px);
+    animation: heroSoftReveal 1.2s ease-out 0.2s forwards;
+}
+
+@keyframes heroSoftReveal {
+    0% {
+        opacity: 0;
+        filter: blur(8px);
+        transform: translateY(20px);
+    }
+
+    60% {
+        opacity: 0.8;
+        filter: blur(2px);
+        transform: translateY(5px);
+    }
+
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+
+
+
+/* ==========================================
+   DOCTORS ALTERNATE LEFT / RIGHT ANIMATION
+========================================== */
+
+.doctors-alternate-reveal .doctor-card {
+    opacity: 0;
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* Odd cards come from LEFT */
+
+.doctors-alternate-reveal .doctor-card:nth-child(odd) {
+    transform: translateX(-100px);
+}
+
+
+/* Even cards come from RIGHT */
+
+.doctors-alternate-reveal .doctor-card:nth-child(even) {
+    transform: translateX(100px);
+}
+
+
+/* ==========================================
+   SHOW ANIMATION
+========================================== */
+
+.doctors-alternate-reveal.show .doctor-card {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* ==========================================
+   DELAY
+========================================== */
+
+.doctors-alternate-reveal.show .doctor-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.doctors-alternate-reveal.show .doctor-card:nth-child(2) {
+    transition-delay: 0.25s;
+}
+
+.doctors-alternate-reveal.show .doctor-card:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+.doctors-alternate-reveal.show .doctor-card:nth-child(4) {
+    transition-delay: 0.55s;
+}
+
+.doctors-alternate-reveal.show .doctor-card:nth-child(5) {
+    transition-delay: 0.7s;
+}
+
+.doctors-alternate-reveal.show .doctor-card:nth-child(6) {
+    transition-delay: 0.85s;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+/* ==========================================
+   DOCTORS MOBILE FIX
+========================================== */
+
+@media (max-width: 576px) {
+
+    .doctors-alternate-reveal {
+        overflow: hidden;
+    }
+
+    .doctors-alternate-reveal .doctor-grid {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .doctors-alternate-reveal .doctor-card {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Left animation */
+    .doctors-alternate-reveal .doctor-card:nth-child(odd) {
+        transform: translateX(-25px);
+    }
+
+    /* Right animation */
+    .doctors-alternate-reveal .doctor-card:nth-child(even) {
+        transform: translateX(25px);
+    }
+
+    /* Final position */
+    .doctors-alternate-reveal.show .doctor-card {
+        transform: translateX(0);
+    }
+
+}
+/* ==========================================
+   FACILITIES POP-UP ANIMATION
+========================================== */
+
+.facilities-pop-animation .section-heading {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+
+.facilities-pop-animation .facility-card {
+    opacity: 0;
+    transform: scale(0.8);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+
+/* ==========================================
+   SHOW
+========================================== */
+
+.facilities-pop-animation.show .section-heading {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.facilities-pop-animation.show .facility-card {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* ==========================================
+   ONE-BY-ONE DELAY
+========================================== */
+
+.facilities-pop-animation.show .facility-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.facilities-pop-animation.show .facility-card:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.facilities-pop-animation.show .facility-card:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.facilities-pop-animation.show .facility-card:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.facilities-pop-animation.show .facility-card:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.facilities-pop-animation.show .facility-card:nth-child(6) {
+    transition-delay: 0.6s;
+}
+
+.facilities-pop-animation.show .facility-card:nth-child(7) {
+    transition-delay: 0.7s;
+}
+
+.facilities-pop-animation.show .facility-card:nth-child(8) {
+    transition-delay: 0.8s;
+}
+
+.facilities-pop-animation.show .facility-card:nth-child(9) {
+    transition-delay: 0.9s;
+}
+
+.facilities-pop-animation.show .facility-card:nth-child(10) {
+    transition-delay: 1s;
+}
+
+.facilities-pop-animation.show .facility-card:nth-child(11) {
+    transition-delay: 1.1s;
+}
+
+
+/* ==========================================
+   ICON ANIMATION
+========================================== */
+
+.facilities-pop-animation .facility-card i {
+    transition: transform 0.4s ease;
+}
+
+.facilities-pop-animation .facility-card:hover i {
+    transform: scale(1.15) rotate(5deg);
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 576px) {
+
+    .facilities-pop-animation .facility-card {
+        transform: scale(0.9);
+    }
+
+}
+
+/* =========================================
+   MOBILE BOOK APPOINTMENT BUTTON
+========================================= */
+
+.mobile-appointment-btn {
+    transition: transform 0.3s ease;
+}
+
+
+/* Mobile only */
+
+@media (max-width: 576px) {
+
+    .mobile-appointment-btn {
+        position: fixed;
+        right: 70px;
+        z-index: 9999;
+
+        display: flex;
+        align-items: center;
+        gap: 13px;
+
+        animation: appointmentBlink 1s ease-in-out 2;
+    }
+
+}
+
+
+/* =========================================
+   OPEN WEBSITE BLINK ANIMATION
+========================================= */
+
+@keyframes appointmentBlink {
+
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    25% {
+        opacity: 0.35;
+        transform: scale(1.08);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    75% {
+        opacity: 0.35;
+        transform: scale(1.08);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+/* =========================================
+   DEPARTMENTS TOP TO DOWN ANIMATION
+========================================= */
+
+.departments-drop-animation .department-card {
+    opacity: 0;
+    transform: translateY(-70px);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* When section becomes visible */
+
+.departments-drop-animation.show .department-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+/* =========================================
+   CTA RIGHT SIDE REVEAL
+========================================= */
+
+.cta-right-reveal .cta-content {
+    opacity: 0;
+    transform: translateX(120px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+
+/* Show */
+
+.cta-right-reveal.show .cta-content {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ==========================================
+   EMERGENCY INDIVIDUAL SCROLL ANIMATION
+========================================== */
+
+.emergency-scroll-animation .emergency-card {
+    opacity: 0;
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* Odd cards come from LEFT */
+
+.emergency-scroll-animation .emergency-card:nth-child(odd) {
+    transform: translateX(-100px);
+}
+
+
+/* Even cards come from RIGHT */
+
+.emergency-scroll-animation .emergency-card:nth-child(even) {
+    transform: translateX(100px);
+}
+
+
+/* Card reaches normal position */
+
+.emergency-scroll-animation .emergency-card.card-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 576px) {
+
+    .emergency-scroll-animation {
+        overflow-x: hidden;
+    }
+
+    .emergency-scroll-animation .emergency-card:nth-child(odd) {
+        transform: translateX(-45px);
+    }
+
+    .emergency-scroll-animation .emergency-card:nth-child(even) {
+        transform: translateX(45px);
+    }
+
+    .emergency-scroll-animation .emergency-card.card-visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+/* ==========================================
+   DEPARTMENTS INDIVIDUAL TOP / BOTTOM
+========================================== */
+
+.departments-top-bottom-animation .department-card {
+    opacity: 0;
+    transition:
+        opacity 0.7s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* Odd cards come from TOP */
+
+.departments-top-bottom-animation .department-card:nth-child(odd) {
+    transform: translateY(-80px);
+}
+
+
+/* Even cards come from BOTTOM */
+
+.departments-top-bottom-animation .department-card:nth-child(even) {
+    transform: translateY(80px);
+}
+
+
+/* Card becomes visible */
+
+.departments-top-bottom-animation .department-card.card-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 576px) {
+
+    .departments-top-bottom-animation {
+        overflow: hidden;
+    }
+
+    .departments-top-bottom-animation .department-card:nth-child(odd) {
+        transform: translateY(-50px);
+    }
+
+    .departments-top-bottom-animation .department-card:nth-child(even) {
+        transform: translateY(50px);
+    }
+
+    .departments-top-bottom-animation .department-card.card-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+.achievement-ticker {
+    width: 100%;
+    overflow: hidden;
+    background: #075e69;
+    color: #ffffff;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+}
+
+.ticker-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    white-space: nowrap;
+    font-size: 13px;
+    font-weight: 500;
+    animation: tickerMove 20s linear infinite;
+}
+
+.ticker-content span {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+@keyframes tickerMove {
+
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .achievement-ticker {
+        height: 34px;
+    }
+
+    .ticker-content {
+        font-size: 11px;
+        gap: 12px;
+        animation-duration: 16s;
+    }
+
+}
+.achievements {
+    background: #f5fbfc;
+}
+
+.achievement-highlight {
+
+    margin-top: 40px;
+
+    background: linear-gradient(
+        135deg,
+        #075e69,
+        #087f8c
+    );
+
+    border-radius: 22px;
+
+    padding: 35px 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #ffffff;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+/* MAIN ICON */
+
+.achievement-icon {
+
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.achievement-icon i {
+    font-size: 32px;
+}
+
+
+/* MAIN CONTENT */
+
+.achievement-content {
+    flex: 1;
+    margin-left: 25px;
+}
+
+.achievement-content h3 {
+
+    font-size: 52px;
+
+    margin: 0;
+
+    line-height: 1;
+
+    font-weight: 700;
+}
+
+.achievement-content h3 span {
+    font-size: 35px;
+}
+
+.achievement-content h4 {
+
+    margin: 8px 0 5px;
+
+    font-size: 20px;
+}
+
+.achievement-content p {
+
+    margin: 0;
+
+    font-size: 14px;
+
+    opacity: 0.9;
+}
+
+
+/* 80 DAYS */
+
+.achievement-days {
+
+    text-align: center;
+
+    border-left: 1px solid
+    rgba(255, 255, 255, 0.3);
+
+    padding-left: 40px;
+}
+
+.achievement-days strong {
+
+    display: block;
+
+    font-size: 42px;
+
+    line-height: 1;
+}
+
+.achievement-days span {
+
+    font-size: 14px;
+
+    opacity: 0.9;
+}
+
+
+/* SMALL CARDS */
+
+.achievement-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-top: 25px;
+}
+
+.achievement-small-card {
+
+    background: #ffffff;
+
+    padding: 25px;
+
+    text-align: center;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.06);
+
+    transition: 0.3s ease;
+}
+
+.achievement-small-card:hover {
+
+    transform: translateY(-5px);
+}
+
+.achievement-small-card i {
+
+    font-size: 27px;
+
+    color: #087f8c;
+
+    margin-bottom: 10px;
+}
+
+.achievement-small-card h3 {
+
+    margin: 5px 0;
+
+    color: #075e69;
+
+    font-size: 30px;
+}
+
+.achievement-small-card p {
+
+    margin: 0;
+
+    color: #666;
+
+    font-size: 14px;
+}
+
+@media (max-width: 576px) {
+
+    .achievement-highlight {
+
+        padding: 25px 18px;
+
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 18px;
+    }
+
+    .achievement-content {
+
+        margin-left: 0;
+    }
+
+    .achievement-content h3 {
+
+        font-size: 45px;
+    }
+
+    .achievement-content h4 {
+
+        font-size: 18px;
+    }
+
+    .achievement-days {
+
+        border-left: none;
+
+        border-top: 1px solid
+        rgba(255, 255, 255, 0.3);
+
+        padding-left: 0;
+
+        padding-top: 15px;
+
+        width: 100%;
+    }
+
+    .achievement-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+}
+/* Small Achievement Animation */
+.achievements-small-animation .section-heading,
+.achievements-small-animation .achievement-highlight,
+.achievements-small-animation .achievement-small-card {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.achievements-small-animation.show .section-heading {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.achievements-small-animation.show .achievement-highlight {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.15s;
+}
+
+.achievements-small-animation.show .achievement-small-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.achievements-small-animation.show .achievement-small-card:nth-child(1) {
+    transition-delay: 0.25s;
+}
+
+.achievements-small-animation.show .achievement-small-card:nth-child(2) {
+    transition-delay: 0.35s;
+}
+
+.achievements-small-animation.show .achievement-small-card:nth-child(3) {
+    transition-delay: 0.45s;
 }

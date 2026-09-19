@@ -7,6 +7,7 @@ const navMenu = document.getElementById("navMenu");
 
 menuToggle.addEventListener("click", () => {
     navMenu.classList.toggle("active");
+    menuToggle.setAttribute("aria-expanded", navMenu.classList.contains("active"));
 });
 
 
@@ -21,6 +22,40 @@ navLinks.forEach(link => {
         navMenu.classList.remove("active");
     });
 });
+
+
+// ===============================
+// SCROLL REVEAL ANIMATIONS
+// ===============================
+
+const revealItems = document.querySelectorAll(
+    ".section-heading, .about-grid, .emergency-card, .department-card, .doctor-card, .facility-card, .cta-content, .contact-card, .contact-form-wrapper, .footer-content"
+);
+
+revealItems.forEach((item, index) => {
+    item.classList.add("reveal");
+
+    if (index % 3 !== 0) {
+        item.classList.add(`reveal-delay-${(index % 3)}`);
+    }
+});
+
+if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            }
+
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+        });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach(item => revealObserver.observe(item));
+} else {
+    revealItems.forEach(item => item.classList.add("is-visible"));
+}
 
 
 // ===============================
