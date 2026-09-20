@@ -122,3 +122,193 @@ if (contactForm) {
     });
 
 }
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* =====================================================
+       CELEBRATION POPUP ELEMENTS
+    ===================================================== */
+
+    const celebrationPopup =
+        document.getElementById("celebrationPopup");
+
+    const celebrationClose =
+        document.getElementById("celebrationClose");
+
+    const celebrationOverlay =
+        celebrationPopup?.querySelector(".celebration-overlay");
+
+    const confettiContainer =
+        document.getElementById("confettiContainer");
+
+
+    /* =====================================================
+       SAFETY CHECK
+    ===================================================== */
+
+    if (!celebrationPopup || !celebrationClose) {
+        return;
+    }
+
+
+    /* =====================================================
+       OPEN POPUP
+    ===================================================== */
+
+    function openCelebrationPopup() {
+
+        celebrationPopup.classList.add("show");
+
+        /* Prevent website background from scrolling */
+        document.body.classList.add("celebration-open");
+
+        /* Create confetti */
+        createConfetti();
+    }
+
+
+    /* =====================================================
+       CLOSE POPUP
+    ===================================================== */
+
+    function closeCelebrationPopup() {
+
+        celebrationPopup.classList.remove("show");
+
+        /* Allow website background scrolling again */
+        document.body.classList.remove("celebration-open");
+    }
+
+
+    /* =====================================================
+       CLOSE BUTTON
+    ===================================================== */
+
+    celebrationClose.addEventListener(
+        "click",
+        closeCelebrationPopup
+    );
+
+
+    /* =====================================================
+       CLICK OUTSIDE POPUP
+    ===================================================== */
+
+    if (celebrationOverlay) {
+
+        celebrationOverlay.addEventListener(
+            "click",
+            closeCelebrationPopup
+        );
+
+    }
+
+
+    /* =====================================================
+       ESC KEY TO CLOSE
+    ===================================================== */
+
+    document.addEventListener("keydown", (event) => {
+
+        if (
+            event.key === "Escape" &&
+            celebrationPopup.classList.contains("show")
+        ) {
+
+            closeCelebrationPopup();
+
+        }
+
+    });
+
+
+    /* =====================================================
+       CONFETTI
+    ===================================================== */
+
+    function createConfetti() {
+
+        if (!confettiContainer) {
+            return;
+        }
+
+        /* Clear previous confetti */
+        confettiContainer.innerHTML = "";
+
+
+        const confettiCount =
+            window.innerWidth <= 600 ? 35 : 55;
+
+
+        for (let i = 0; i < confettiCount; i++) {
+
+            const confetti =
+                document.createElement("span");
+
+
+            confetti.className =
+                "celebration-confetti";
+
+
+            /* Random position */
+            confetti.style.left =
+                Math.random() * 100 + "%";
+
+
+            /* Random animation delay */
+            confetti.style.animationDelay =
+                Math.random() * 2 + "s";
+
+
+            /* Random animation duration */
+            confetti.style.animationDuration =
+                (3 + Math.random() * 3) + "s";
+
+
+            /* Random size */
+            const size =
+                5 + Math.random() * 6;
+
+            confetti.style.width =
+                size + "px";
+
+            confetti.style.height =
+                size * 1.5 + "px";
+
+
+            /* Random rotation */
+            confetti.style.transform =
+                `rotate(${Math.random() * 360}deg)`;
+
+
+            confettiContainer.appendChild(confetti);
+
+        }
+
+    }
+
+
+    /* =====================================================
+       OPTIONAL:
+       OPEN POPUP AUTOMATICALLY
+    ===================================================== */
+
+   /* =====================================================
+   OPEN IMMEDIATELY + AUTO CLOSE AFTER 6 SECONDS
+===================================================== */
+
+/* =====================================================
+   OPEN IMMEDIATELY + AUTO CLOSE AFTER 6 SECONDS
+===================================================== */
+
+openCelebrationPopup();
+
+setTimeout(() => {
+
+    closeCelebrationPopup();
+
+}, 6000);
+
+});
