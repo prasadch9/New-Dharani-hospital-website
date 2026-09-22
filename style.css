@@ -927,6 +927,16 @@ svg {
   font-weight: 600;
 }
 
+
+.doctor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 14px;
+}
+
 .doctor-info h3 {
   color: #173c43;
   font-size: 21px;
